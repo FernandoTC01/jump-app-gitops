@@ -6,10 +6,10 @@ jump-app-argocd:
 
 jump-app-cicd:
   enabled: true
-  namespaceDev: user01-jump-app-dev
+  namespaceDev: user03-jump-app-dev
   namespacePre: mock-value-pre
   namespacePro: mock-value-pro
-  namespaceGitOps: user01-gitops-argocd
+  namespaceGitOps: user03-gitops-argocd
   functTestRepo: https://github.com/acidonper/jump-app-functional-tests.git
   functTestRepoBranch: master
   functTestMicro: front-javascript
@@ -29,12 +29,12 @@ global:
   apps:
     front-javascript:
       build: is
-      imagestream: nodejs:18-ubi8
+      imagestream: nodejs:20-ubi8
       imagestreamNamespace: openshift
       versions:
         - v1
       type: nodejs
-      gitRepo: https://github.com/acidonper/jump-app-typescrypt-react.git
+      gitRepo: https://github.com/nveces/jump-app-typescrypt-react.git
     back-golang:
       build: dockerfile
       versions:
